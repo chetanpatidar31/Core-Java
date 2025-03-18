@@ -2,7 +2,7 @@ package com.rays.basic;
 
 public class ArmstrongNumber {
 	public static void main(String[] args) {
-		//testing method
+		//testing arm() method
 		ArmstrongNumber ar = new ArmstrongNumber();
 		ar.arm();
 		System.out.println("-------------");
