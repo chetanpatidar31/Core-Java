@@ -9,7 +9,7 @@ public class Methods {
 		System.out.println("Multiply is : " + (a * b));
 	}
 
-	public void name(String name) {
+	public void greeting(String name) {
 		System.out.println("Hello " + (name));
 	}
 }
