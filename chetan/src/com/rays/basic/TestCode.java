@@ -1,32 +1,62 @@
 package com.rays.basic;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class TestCode {
+	String name;
+	int id;
+	double balance;
+
+	public TestCode(String name, int id, double balance) {
+		this.name = name;
+		this.id = id;
+		this.balance = balance;
+	}
+
+	public static TestCode[] getEmployee() {
+
+		String name;
+		int id;
+		double balance;
+
+		Scanner sc = new Scanner(System.in);
+		TestCode[] t = new TestCode[5];
+
+		for (int i = 0; i < 5; i++) {
+
+			System.out.println("Enter employee detail:");
+			System.out.print("Enter name: ");
+			name = sc.nextLine();
+
+			System.out.print("Enter id: ");
+			id = sc.nextInt();
+
+			System.out.print("Enter balance: ");
+			balance = sc.nextDouble();
+
+			sc.nextLine(); // change the line
+
+			t[i] = new TestCode(name, id, balance);
+		}
+
+		sc.close();
+
+		System.out.println("Data entry finished");
+		return t;
+	}
+
+	@Override
+	public String toString() {
+		return "name=" + name + ", id=" + id + ", balance=" + balance + "";
+	}
+
 	public static void main(String[] args) {
 
-		int[] arr = { 20, 10, 11, 5,87, 13, 67, 86 };
+		TestCode[] test = TestCode.getEmployee();
 
-		int secondHighest = 0;
-
-		int highest = 0;
-
-		for (int i = 0; i < arr.length; i++) {
-
-			if (arr[i] > highest) {
-
-//				secondHighest = highest;
-
-				highest = arr[i];
-
-			}
-
-			if (arr[i] < highest && arr[i] > secondHighest) {
-				secondHighest = arr[i];
-			}
+		for (TestCode t : test) {
+			System.out.println(t);
 		}
-		System.out.println("Highest: " + highest);
 
-		System.out.println("Second Highest: " + secondHighest);
 	}
 }
