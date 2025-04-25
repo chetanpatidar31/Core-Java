@@ -15,6 +15,6 @@ public class ReadTextFile {
 
 			i = fr.read();
 		}
-//		fr.close();
+		fr.close();
 	}
 }
